@@ -1,0 +1,20 @@
+{
+  "name": "jonathansantos/mvc",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jonathan Santos",
+      "email": "jonathan.g.o.santos@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "PHP": "8.3.*","ext-pdo": "*"
+  }
+}
