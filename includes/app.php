@@ -1,9 +1,10 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-use App\Database\Database;
+use \App\Database\Database;
 use \App\Environment\Environment;
 use \App\Utils\View;
+use \App\Http\Middleware\Queue as MiddlewareQueue;
 
 // Carrega variáveis de ambiente
 Environment::load(__DIR__ . '/../');
@@ -22,3 +23,11 @@ define('URL', getenv('URL'));
 
 // Inicia as variáveis padrão das Views
 View::init(['URL' => URL]);
+
+MiddlewareQueue::setMap([
+    'maintenance' => \App\Http\Middleware\Maintenance::class,
+]);
+
+MiddlewareQueue::setDefault([
+    'maintenance'
+]);
